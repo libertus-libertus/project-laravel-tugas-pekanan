@@ -15,7 +15,11 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', [DashboardController::class, 'home']);
-Route::get('/welcome', [DashboardController::class, 'welcome']);
-Route::get('/register', [AuthController::class, 'register']);
-Route::post('/simpan', [AuthController::class, 'simpan']);
+Route::get('/', [DashboardController::class, 'home'])->name('home');
+Route::get('/welcome', [DashboardController::class, 'welcome'])->name('welcome');
+Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/simpan', [AuthController::class, 'simpan'])->name('simpan');
+
+Route::get('/table', [DashboardController::class, 'table'])->name('table');
+Route::get('/data-table', [DashboardController::class, 'data_table'])->name('data_table');
+Route::get('/contact-us', [DashboardController::class, 'contact'])->name('contact');
